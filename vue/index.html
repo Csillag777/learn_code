@@ -5,27 +5,26 @@
    </head>
    <body>
       <div id = "databinding">
-         <div v-bind:style = "styleobj" v-on:mouseover = "changebgcolor" v-on:mouseout = "originalcolor"></div>
+         <button v-on:click = "showdata" v-bind:style = "styleobj">Click Me</button>
+         <span style = "font-size:25px;"><b>{{show}}</b></span>
+         <h1 v-if = "show">This is h1 tag</h1>
+         <h2>This is h2 tag</h2>
       </div>
       <script type = "text/javascript">
          var vm = new Vue({
             el: '#databinding',
             data: {
-               num1: 100,
-               num2 : 200,
-               total : '',
-               styleobj : {
-                  width:"100px",
-                  height:"100px",
-                  backgroundColor:"red"
+               show: true,
+               styleobj: {
+                  backgroundColor: '#2196F3!important',
+                  cursor: 'pointer',
+                  padding: '8px 16px',
+                  verticalAlign: 'middle',
                }
             },
             methods : {
-               changebgcolor : function() {
-                  this.styleobj.backgroundColor = "green";
-               },
-               originalcolor : function() {
-                  this.styleobj.backgroundColor = "red";
+               showdata : function() {
+                  this.show = !this.show;
                }
             },
          });
