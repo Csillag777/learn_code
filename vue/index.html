@@ -2,33 +2,26 @@
    <head>
       <title>VueJs Instance</title>
       <script type = "text/javascript" src = "js/vue.js"></script>
+      <link href = "https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel = "stylesheet" type = "text/css">
    </head>
    <body>
-      <style>
-         .fade-enter-active, .fade-leave-active {
-            transition: opacity 2s
-         }
-         .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-            opacity: 0
-         }
-      </style>
-      <div id = "databinding">
-         <button v-on:click = "show = !show">Click Me</button>
-         <transition name = "fade">
-            <p v-show = "show" v-bind:style = "styleobj">Animation Example</p>
+      <div id = "databinding" style = "text-align:center;">
+         <transition  appear
+            appear-class = "custom-appear-class"
+            appear-active-class = "animated wobble">
+            <component v-bind:is = "view"></component>
          </transition>
       </div>
       <script type = "text/javascript">
          var vm = new Vue({
             el: '#databinding',
             data: {
-               show:true,
-               styleobj :{
-                  fontSize:'30px',
-                  color:'red'
-               }
+               view: 'component1'
             },
-            methods : {
+            components: {
+               'component1': {
+                  template: '<div><span style = "font-size:25;color:red;">Animation on Components</span></div>'
+               }
             }
          });
       </script>
