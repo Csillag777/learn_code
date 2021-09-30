@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { stationList } from './station-list.const';
@@ -11,5 +12,6 @@ export class AppComponent {
 
   list = stationList;
   today = new Date();
+  amount: number = 259;
 }
 
