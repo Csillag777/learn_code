@@ -10,5 +10,6 @@ import { stationList } from './station-list.const';
 export class AppComponent {
 
   list = stationList;
-
+  today = new Date();
 }
+
