@@ -14,6 +14,7 @@ align_mode = 'nswe'
 pad = 5
 fontStyle = tkFont.Font(family="Lucida Grande", size=20)
 
+
 def show():
     
     result = 'hello world'
