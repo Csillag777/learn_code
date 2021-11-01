@@ -1,10 +1,11 @@
 import tkinter as tk
-from tkinter.constants import TOP
+from tkinter.constants import BOTTOM, TOP
 from typing import Sized
 from PIL import Image, ImageTk
 import tkinter.font as tkFont
 from tkinter import ttk
 from tkinter import messagebox
+from sys import version_info
 window = tk.Tk()
 window.title('dash borad test')
 window.geometry('800x600')
@@ -52,5 +53,7 @@ print(comboExample.current(), comboExample.get())
 div3 = tk.Button(window, text="alert",bg="yellow",command=alert)
 div3.pack(side = tk.TOP)
 #result_label.grid(column=0, row=2, padx=pad, pady=pad, sticky=align_mode)
-
+logo = tk.PhotoImage(file='1.gif')
+labelExample = tk.Label(window, image=logo)
+labelExample.pack(side=tk.BOTTOM)
 window.mainloop()
