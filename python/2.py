@@ -15,11 +15,11 @@ def calculate_bmi_number():
 
 def get_bmi_status_description(bmi_value):
     if bmi_value < 18.5:
-        return '體重過輕囉，多吃點！'
+        return '體重過輕'
     elif bmi_value >= 18.5 and bmi_value < 24:
-        return '體重剛剛好，繼續保持！'
+        return '體重剛好'
     elif bmi_value >= 24 :
-        return '體重有點過重囉，少吃多運動！'
+        return '體重過重'
 
 header_label = tk.Label(window, text='BMI 計算器')
 header_label.pack()
