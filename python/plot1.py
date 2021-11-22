@@ -8,11 +8,11 @@ years = [1000,1500,1600,1700,1750,1800,1850,
 
 pops = range(0,110,5)
 deaths = range(0,22)
-lines = plt.plot(years,pops,years,deaths)
-
+plt.plot(years,pops)
+plt.plot(years,deaths)
 plt.title("Population Growth") # title
 plt.ylabel("Population in billions") # y label
 plt.xlabel("Population growth by year") # x label
-plt.setp(lines,marker = "o") 
+#plt.setp(lines,marker = "o") 
 plt.grid(True)
 plt.show()
